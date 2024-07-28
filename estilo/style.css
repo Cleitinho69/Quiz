@@ -1,0 +1,94 @@
+*{
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+body,html{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    margin-bottom: 25px;
+}
+
+h2{
+    margin-top: 10px;
+    text-align: center;
+}
+
+input{
+    visibility: hidden;
+}
+
+.resposta{
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    margin: 10px;
+    height: 50px;
+    background-color: rgba(177, 176, 176, 0.363);
+}
+
+#timer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 90%;
+    margin-left: 5%;
+    font-size: 30px;
+}
+#timer div{
+    position: absolute;
+    border-radius: 20px;
+    height: 50px;
+    width: 270px;
+    z-index: -1;
+    background-color: rgb(0, 255, 42);
+    transition: width 10s ease-in-out, background-color 1s ease-in-out;
+}
+@keyframes barra_tem{
+    0% { 
+        background-color: rgb(0, 255, 42);
+        width: 270; 
+    }
+    50% {
+        background-color: rgb(255, 238, 2);
+    }
+    80%{
+        background-color: rgb(255, 123, 0);
+    }
+    100% {
+        background-color: red;
+        width: 0px; 
+    }
+}
+
+.quadro{
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    width: 300px;
+    height: 300px;
+    box-shadow: 0px 0px 20px 7px rgba(85, 85, 85, 0.664);
+}
+
+.errado{
+    background-color: rgb(255, 0, 0);
+    color: rgb(95, 0, 0);
+}
+.certo{
+    background-color: rgb(0, 255, 34);
+    color: rgb(0, 77, 10);
+}
+.certo2{
+    background-color: rgba(0, 255, 34, 0.432);
+    color: rgb(1, 48, 7);
+}
