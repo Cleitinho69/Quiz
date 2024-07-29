@@ -2,6 +2,7 @@ var resposta = [...document.querySelectorAll(".resposta")];
 const caixa = [...document.getElementsByName("resposta")];
 var el_certo = document.getElementById("certo");
 var respondeu = false;
+var vez =1;
 //aqui serve para desabilitar as caixas
 var desabilitar = () => {
   resposta.map((el) => {
@@ -65,30 +66,31 @@ setInterval(() => {
         desabilitar();
         setTimeout(() => {
           alert("Tempo esgotado!");
-          if (window.location.href == "http://localhost/Quiz/") {
+          if (window.location.href == "index.php") {
             window.location.replace("pagina2.php");
           } else if (
-            window.location.href == "http://localhost/Quiz/pagina2.php"
+            window.location.href == "pagina2.php"
           ) {
             window.location.replace("pagina3.php");
           } else if (
-            window.location.href == "http://localhost/Quiz/pagina3.php"
+            window.location.href == "pagina3.php"
           ) {
             window.location.replace("pagina4.php");
           } else if (
-            window.location.href == "http://localhost/Quiz/pagina4.php"
+            window.location.href == "pagina4.php"
           ) {
             window.location.replace("pagina5.php");
           }
         }, 100);
       }, 1000);
     }
-  } else {
+  } else if(vez==1){
+    vez--;
     timer.backgroundColor = timer.backgroundColor;
     timer.style.width = timer.clientWidth + "px";
     if(el_certo.classList[1]=="certo"){
         alert("Parabens você acertou!");
-    }else{
+    }else if (!el_certo.classList[1]==""){
         alert("Que pena, você errou ")
     }
     if (window.location.href == "http://localhost/Quiz/") {
