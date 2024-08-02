@@ -9,6 +9,9 @@ var desabilitar = () => {
     el.children[0].disabled = true;
   });
 };
+
+//posicionar a dificuldade
+var dificul = document.querySelector()
 //aqui serve para selecionar as caixas
 resposta.map((el) => {
   el.addEventListener("click", (check) => {
@@ -66,21 +69,21 @@ setInterval(() => {
         desabilitar();
         setTimeout(() => {
           alert("Tempo esgotado!");
-          if (window.location.href == "index.php") {
-            window.location.replace("pagina2.php");
-          } else if (
-            window.location.href == "pagina2.php"
-          ) {
-            window.location.replace("pagina3.php");
-          } else if (
-            window.location.href == "pagina3.php"
-          ) {
-            window.location.replace("pagina4.php");
-          } else if (
-            window.location.href == "pagina4.php"
-          ) {
-            window.location.replace("pagina5.php");
-          }
+          // if (window.location.href == "index.php") {
+          //   window.location.replace("pagina2.php");
+          // } else if (
+          //   window.location.href == "pagina2.php"
+          // ) {
+          //   window.location.replace("pagina3.php");
+          // } else if (
+          //   window.location.href == "pagina3.php"
+          // ) {
+          //   window.location.replace("pagina4.php");
+          // } else if (
+          //   window.location.href == "pagina4.php"
+          // ) {
+          //   window.location.replace("pagina5.php");
+          // }
         }, 100);
       }, 1000);
     }
@@ -93,14 +96,14 @@ setInterval(() => {
     }else if (!el_certo.classList[1]==""){
         alert("Que pena, você errou ")
     }
-    if (window.location.href == "http://localhost/Quiz/") {
-      window.location.replace("pagina2.php");
-    } else if (window.location.href == "http://localhost/Quiz/pagina2.php") {
-      window.location.replace("pagina3.php");
-    } else if (window.location.href == "http://localhost/Quiz/pagina3.php") {
-      window.location.replace("pagina4.php");
-    } else if (window.location.href == "http://localhost/Quiz/pagina4.php") {
-      window.location.replace("pagina5.php");
-    }
+    // if (window.location.href == "http://localhost/Quiz/") {
+    //   window.location.replace("pagina2.php");
+    // } else if (window.location.href == "http://localhost/Quiz/pagina2.php") {
+    //   window.location.replace("pagina3.php");
+    // } else if (window.location.href == "http://localhost/Quiz/pagina3.php") {
+    //   window.location.replace("pagina4.php");
+    // } else if (window.location.href == "http://localhost/Quiz/pagina4.php") {
+    //   window.location.replace("pagina5.php");
+    // }
   }
 }, 1000);

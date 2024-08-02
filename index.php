@@ -19,6 +19,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </head>
   <body>
     <h1>QuizName</h1>
+      <div class="dificul">
+        <div></div>
+      </div>
     <div class="quadro">
       <h2>Pergunta?</h2>
 
