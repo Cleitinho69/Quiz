@@ -9,6 +9,9 @@ var desabilitar = () => {
     el.children[0].disabled = true;
   });
 };
+
+//posicionar a dificuldade
+var dificul = document.querySelector()
 //aqui serve para selecionar as caixas
 resposta.map((el) => {
   el.addEventListener("click", (check) => {
