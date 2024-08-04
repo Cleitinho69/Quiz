@@ -1,12 +1,12 @@
 <?php
 session_start();
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  if(isset($_POST['resposta'])){
     if (!empty($_POST['resposta'] && $_POST['resposta'] == "certa")) {
-        $_SESSION['resposta'] = 1;
-    }else{
-        $_SESSION['resposta'] = 0;
-    }
-}
+      $_SESSION['resposta'] += 1;
+  }else{
+      $_SESSION['resposta'] += 0;
+  }
+  }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -17,26 +17,47 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Quiz</title>
     <link rel="stylesheet" href="estilo/style.css" />
   </head>
+  <style>
+    .dificul div {
+      width: 50%;
+      height: 100%;
+      text-align: center;
+      border-radius: 10px;
+      background-color: orange;
+    }
+    .dificul div::before{
+      content: "MÉDIO";
+      top: 0;
+      font-size: 10px;
+      position: absolute;
+      color: rgb(0, 0, 0);
+    }
+  </style>
   <body>
-    <h1>QuizName</h1>
+    <!-- <h1>QuizName</h1> -->
     <div class="quadro">
-      <h2>Pergunta?</h2>
+      <div class="dificul">
+        <div></div>
+      </div>
+
+      <h2>Qual nome desse local?</h2>
+
+      <img src="img/locais/lençois.jpg" alt="">
 
       <form method="post">
-
         <div class="resposta">
-          <input type="radio" name="resposta" value="errado" />
-          <label for="resposta">Resposta1</label>
+          <input type="radio" name="resposta" value="certo" />
+          <label for="resposta">Lençóis Marãnheces</label>
         </div>
 
         <div class="resposta" id="certo">
-          <input type="radio" name="resposta" value="certo"/>
-          <label for="resposta">Resposta1</label>
+          <input type="radio" name="resposta" value="errado" />
+          <label for="resposta">Deserto Ártico</label>
         </div>
 
         <div class="resposta">
           <input type="radio" name="resposta" value="errado" />
-          <label for="resposta">Resposta1</label>
+          <label for="resposta">Deserto Antártico</label>
         </div>
 
         <div id="timer">

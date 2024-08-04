@@ -1,12 +1,12 @@
 <?php
 session_start();
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  if(isset($_POST['resposta'])){
     if (!empty($_POST['resposta'] && $_POST['resposta'] == "certa")) {
-        $_SESSION['resposta'] = 1;
-    }else{
-        $_SESSION['resposta'] = 0;
-    }
-}
+      $_SESSION['resposta'] += 1;
+  }else{
+      $_SESSION['resposta'] += 0;
+  }
+  }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
       <h2>Qual nome desse local?</h2>
 
-      <img src="img/locais/coliseu.jpg" alt="">
+      <img src="img/locais/" alt="">
 
       <form method="post">
         <div class="resposta">

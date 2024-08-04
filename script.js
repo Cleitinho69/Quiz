@@ -2,7 +2,7 @@ var resposta = [...document.querySelectorAll(".resposta")];
 const caixa = [...document.getElementsByName("resposta")];
 var el_certo = document.getElementById("certo");
 var respondeu = false;
-var vez =1;
+var vez = 1;
 //aqui serve para desabilitar as caixas
 var desabilitar = () => {
   resposta.map((el) => {
@@ -68,39 +68,73 @@ setInterval(() => {
           alert("Tempo esgotado!");
           if (window.location.href == "index.php") {
             window.location.replace("pagina2.php");
-          } else if (
-            window.location.href == "pagina2.php"
-          ) {
+          } else if (window.location.href == "pagina2.php") {
             window.location.replace("pagina3.php");
-          } else if (
-            window.location.href == "pagina3.php"
-          ) {
+          } else if (window.location.href == "pagina3.php") {
             window.location.replace("pagina4.php");
-          } else if (
-            window.location.href == "pagina4.php"
-          ) {
+          } else if (window.location.href == "pagina4.php") {
             window.location.replace("pagina5.php");
+          } else if (window.location.href == "pagina5.php") {
+            window.location.replace("pagina6.php");
+          } else if (window.location.href == "pagina6.php") {
+            window.location.replace("pagina7.php");
+          } else if (window.location.href == "pagina7.php") {
+            window.location.replace("pagina8.php");
+          } else if (window.location.href == "pagina8.php") {
+            window.location.replace("pagina9.php");
+          } else if (window.location.href == "pagina9.php") {
+            window.location.replace("pagina10.php");
+          } else if (window.location.href == "pagina10.php") {
+            window.location.replace("pagina11.php");
+          } else if (window.location.href == "pagina11.php") {
+            window.location.replace("pagina12.php");
+          } else if (window.location.href == "pagina12.php") {
+            window.location.replace("pagina13.php");
+          } else if (window.location.href == "pagina13.php") {
+            window.location.replace("pagina14.php");
+          } else if (window.location.href == "pagina14.php") {
+            window.location.replace("pagina15.php");
           }
         }, 100);
       }, 1000);
     }
-  } else if(vez==1){
+  } else if (vez == 1) {
     vez--;
     timer.backgroundColor = timer.backgroundColor;
     timer.style.width = timer.clientWidth + "px";
-    if(el_certo.classList[1]=="certo"){
-        alert("Parabens você acertou!");
-    }else if (!el_certo.classList[1]==""){
-        alert("Que pena, você errou ")
+    if (el_certo.classList[1] == "certo") {
+      alert("Parabens você acertou!");
+    } else if (!el_certo.classList[1] == "") {
+      alert("Que pena, você errou ");
     }
-    if (window.location.href == "http://localhost/Quiz/") {
+    if (window.location.href == "index.php") {
       window.location.replace("pagina2.php");
-    } else if (window.location.href == "http://localhost/Quiz/pagina2.php") {
+    } else if (window.location.href == "pagina2.php") {
       window.location.replace("pagina3.php");
-    } else if (window.location.href == "http://localhost/Quiz/pagina3.php") {
+    } else if (window.location.href == "pagina3.php") {
       window.location.replace("pagina4.php");
-    } else if (window.location.href == "http://localhost/Quiz/pagina4.php") {
+    } else if (window.location.href == "pagina4.php") {
       window.location.replace("pagina5.php");
+    } else if (window.location.href == "pagina5.php") {
+      window.location.replace("pagina6.php");
+    } else if (window.location.href == "pagina6.php") {
+      window.location.replace("pagina7.php");
+    } else if (window.location.href == "pagina7.php") {
+      window.location.replace("pagina8.php");
+    } else if (window.location.href == "pagina8.php") {
+      window.location.replace("pagina9.php");
+    } else if (window.location.href == "pagina9.php") {
+      window.location.replace("pagina10.php");
+    } else if (window.location.href == "pagina10.php") {
+      window.location.replace("pagina11.php");
+    } else if (window.location.href == "pagina11.php") {
+      window.location.replace("pagina12.php");
+    } else if (window.location.href == "pagina12.php") {
+      window.location.replace("pagina13.php");
+    } else if (window.location.href == "pagina13.php") {
+      window.location.replace("pagina14.php");
+    } else if (window.location.href == "pagina14.php") {
+      window.location.replace("pagina15.php");
     }
   }
 }, 1000);

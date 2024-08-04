@@ -1,12 +1,12 @@
 <?php
 session_start();
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  if(isset($_POST['resposta'])){
     if (!empty($_POST['resposta'] && $_POST['resposta'] == "certa")) {
-        $_SESSION['resposta'] = 1;
-    }else{
-        $_SESSION['resposta'] = 0;
-    }
-}
+      $_SESSION['resposta'] += 1;
+  }else{
+      $_SESSION['resposta'] += 0;
+  }
+  }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -19,14 +19,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </head>
   <style>
     .dificul div {
-      width: 30%;
+      width: 100%;
       height: 100%;
       text-align: center;
       border-radius: 10px;
-      background-color: rgb(0, 255, 0);
+      background-color: red;
     }
     .dificul div::before{
-      content: "FÁCIL";
+      content: "DIFÍCIL";
       top: 0;
       font-size: 10px;
       position: absolute;
@@ -40,24 +40,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div></div>
       </div>
 
-      <h2>Qual nome desse local?</h2>
+      <h2>Qual nome desse anime?</h2>
 
-      <img src="img/locais/coliseu.jpg" alt="">
+      <img src="img/ANIMES/cavaleiros.jfif" alt="">
 
       <form method="post">
         <div class="resposta">
           <input type="radio" name="resposta" value="errado" />
-          <label for="resposta">Arena de Roma</label>
+          <label for="resposta">Não Sou Velho</label>
         </div>
 
         <div class="resposta" id="certo">
-          <input type="radio" name="resposta" value="certo" />
-          <label for="resposta">Coliseu</label>
+          <input type="radio" name="resposta" value="errado" />
+          <label for="resposta">Contos de Atena</label>
         </div>
 
         <div class="resposta">
-          <input type="radio" name="resposta" value="errado" />
-          <label for="resposta">Centro Olimpico</label>
+          <input type="radio" name="resposta" value="certo" />
+          <label for="resposta">Cavaleiros do Zodíaco</label>
         </div>
 
         <div id="timer">

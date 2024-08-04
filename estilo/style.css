@@ -1,7 +1,7 @@
 *{
     padding: 0;
-    border: 0;
     margin: 0;
+    border: 0;
 }
 
 body,html{
@@ -20,6 +20,7 @@ h1{
 
 h2{
     margin-top: 10px;
+    margin-bottom: 5px;
     text-align: center;
 }
 
@@ -34,6 +35,11 @@ input{
     margin: 10px;
     height: 50px;
     background-color: rgba(177, 176, 176, 0.363);
+}
+
+.resposta:hover{
+    border: 2px solid rgba(88, 88, 88, 0.315);
+    padding: 1px;
 }
 
 #timer{
@@ -52,23 +58,7 @@ input{
     width: 270px;
     z-index: -1;
     background-color: rgb(0, 255, 42);
-    transition: width 10s ease-in-out, background-color 1s ease-in-out;
-}
-@keyframes barra_tem{
-    0% { 
-        background-color: rgb(0, 255, 42);
-        width: 270; 
-    }
-    50% {
-        background-color: rgb(255, 238, 2);
-    }
-    80%{
-        background-color: rgb(255, 123, 0);
-    }
-    100% {
-        background-color: red;
-        width: 0px; 
-    }
+    transition: width 10s linear, background-color 1.5s linear;
 }
 
 .quadro{
@@ -76,8 +66,28 @@ input{
     flex-direction: column;
     border-radius: 30px;
     width: 300px;
-    height: 300px;
+    height: 490px;
     box-shadow: 0px 0px 20px 7px rgba(85, 85, 85, 0.664);
+}
+
+img{
+    width: 290px;
+    height: 190px;
+    margin: 0 5px 0 5px;
+    border-radius: 20px;
+}
+
+.dificul{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    margin-top: 15%;
+    margin-left: 10px;
+    width: 70px;
+    height: 10px;
+    background-color: rgb(196, 196, 196);
+    border: solid rgba(0, 0, 0, 0.295) 1px;
+    border-radius: 10px;
 }
 
 .errado{
