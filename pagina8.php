@@ -34,7 +34,7 @@ session_start();
     }
   </style>
   <body>
-    <!-- <h1>QuizName</h1> -->
+  <h1>Player: <?php echo $_SESSION['nome'];?></h1>
     <div class="quadro">
       <div class="dificul">
         <div></div>

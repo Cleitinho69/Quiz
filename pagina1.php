@@ -1,12 +1,8 @@
 <?php
 session_start();
-  if(isset($_POST['resposta'])){
     if (!empty($_POST['resposta'] && $_POST['resposta'] == "certa")) {
-      $_SESSION['resposta'] += 1;
-  }else{
-      $_SESSION['resposta'] += 0;
-  }
-  }
+        $_SESSION['resposta'] = 1;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -19,14 +15,14 @@ session_start();
   </head>
   <style>
     .dificul div {
-      width: 50%;
+      width: 30%;
       height: 100%;
       text-align: center;
       border-radius: 10px;
-      background-color: orange;
+      background-color: rgb(0, 255, 0);
     }
     .dificul div::before{
-      content: "MÉDIO";
+      content: "FÁCIL";
       top: 0;
       font-size: 10px;
       position: absolute;
@@ -34,7 +30,7 @@ session_start();
     }
   </style>
   <body>
-  <h1>Player: <?php echo $_SESSION['nome'];?></h1>
+    <h1>Player: <?php echo $_SESSION['nome'];?></h1>
     <div class="quadro">
       <div class="dificul">
         <div></div>
@@ -42,22 +38,22 @@ session_start();
 
       <h2>Qual nome desse local?</h2>
 
-      <img src="img/locais/lençois.jpg" alt="">
+      <img src="img/locais/coliseu.jpg" alt="">
 
       <form method="post">
         <div class="resposta">
-          <input type="radio" name="resposta" value="certo" />
-          <label for="resposta">Lençóis Marãnheces</label>
+          <input type="radio" name="resposta" value="errado" />
+          <label for="resposta">Arena de Roma</label>
         </div>
 
         <div class="resposta" id="certo">
-          <input type="radio" name="resposta" value="errado" />
-          <label for="resposta">Deserto Ártico</label>
+          <input type="radio" name="resposta" value="certo" />
+          <label for="resposta">Coliseu</label>
         </div>
 
         <div class="resposta">
           <input type="radio" name="resposta" value="errado" />
-          <label for="resposta">Deserto Antártico</label>
+          <label for="resposta">Centro Olimpico</label>
         </div>
 
         <div id="timer">
