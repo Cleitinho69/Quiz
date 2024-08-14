@@ -67,6 +67,8 @@ setInterval(() => {
         desabilitar();
         setTimeout(() => {
           alert("Tempo esgotado!");
+          //aqui serve para dar um submit na página
+          document.querySelector('form').submit();
         }, 100);
       }, 1000);
     }
@@ -78,7 +80,7 @@ setInterval(() => {
       alert("Parabens você acertou!");
     } else if (!el_certo.classList[1] == "") {
       alert("Que pena, você errou ");
-      
+
     }
   }
 }, 1000);
