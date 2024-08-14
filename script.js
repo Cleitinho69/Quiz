@@ -78,9 +78,12 @@ setInterval(() => {
     timer.style.width = timer.clientWidth + "px";
     if (el_certo.classList[1] == "certo") {
       alert("Parabens você acertou!");
+      //aqui serve para dar um submit na página
+      document.querySelector('form').submit();
     } else if (!el_certo.classList[1] == "") {
       alert("Que pena, você errou ");
-
+      //aqui serve para dar um submit na página
+      document.querySelector('form').submit();
     }
   }
 }, 1000);

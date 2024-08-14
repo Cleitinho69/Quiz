@@ -1,10 +1,10 @@
 <?php
 session_start();
-    if (!empty($_POST['resposta'] && $_POST['resposta'] == "certa")) {
+    if (!empty($_POST['resposta'] && $_POST['resposta'] == "certa") && isset($_POST['resposta'])) {
         $_SESSION['resposta'] = 1;
         header('locale:pagina2.php');
     } else{
-      header('locale:pagina2.php');
+        header('locale:pagina2.php');
     }
 ?>
 <!DOCTYPE html>
