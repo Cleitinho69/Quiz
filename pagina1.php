@@ -1,10 +1,10 @@
 <?php
 session_start();
-    if (!empty($_POST['resposta'] && $_POST['resposta'] == "certa") && isset($_POST['resposta'])) {
+    if (isset($_POST['resposta']) && !empty($_POST['resposta']) && $_POST['resposta'] == "certo") {
         $_SESSION['resposta'] = 1;
-        header('locale:pagina2.php');
-    } else{
-        header('locale:pagina2.php');
+        header('location: pagina2.php');
+    } else if (isset($_POST['resposta']) && !empty($_POST['resposta'])){
+        header('location: pagina2.php');
     }
 ?>
 <!DOCTYPE html>
@@ -43,7 +43,7 @@ session_start();
 
       <img src="img/locais/coliseu.jpg" alt="">
 
-      <form method="post">
+      <form method="post" action="pagina1.php">
         <div class="resposta">
           <input type="radio" name="resposta" value="errado" />
           <label for="resposta">Arena de Roma</label>
@@ -58,7 +58,6 @@ session_start();
           <input type="radio" name="resposta" value="errado" />
           <label for="resposta">Centro Olimpico</label>
         </div>
-
         <div id="timer">
           <div></div>
           <p></p>

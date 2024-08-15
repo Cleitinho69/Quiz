@@ -1,12 +1,11 @@
 <?php
 session_start();
-  if(isset($_POST['resposta'])){
-    if (!empty($_POST['resposta'] && $_POST['resposta'] == "certa")) {
-      $_SESSION['resposta'] += 1;
-  }else{
-      $_SESSION['resposta'] += 0;
-  }
-  }
+    if (isset($_POST['resposta']) && !empty($_POST['resposta']) && $_POST['resposta'] == "certo") {
+        $_SESSION['resposta'] += 1;
+        header('location: pagina8.php');
+    } else if (isset($_POST['resposta']) && !empty($_POST['resposta'])){
+        header('location: pagina8.php');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -45,12 +44,12 @@ session_start();
       <img src="img/animes/sow.jfif" alt="">
 
       <form method="post">
-        <div class="resposta">
+        <div class="resposta" id="certo">
           <input type="radio" name="resposta" value="certo" />
           <label for="resposta">Sword Art Online</label>
         </div>
 
-        <div class="resposta" id="certo">
+        <div class="resposta">
           <input type="radio" name="resposta" value="errado" />
           <label for="resposta">Back Clover</label>
         </div>

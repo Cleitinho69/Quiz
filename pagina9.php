@@ -1,12 +1,11 @@
 <?php
 session_start();
-  if(isset($_POST['resposta'])){
-    if (!empty($_POST['resposta'] && $_POST['resposta'] == "certa")) {
-      $_SESSION['resposta'] += 1;
-  }else{
-      $_SESSION['resposta'] += 0;
-  }
-  }
+    if (isset($_POST['resposta']) && !empty($_POST['resposta']) && $_POST['resposta'] == "certo") {
+        $_SESSION['resposta'] += 1;
+        header('location: pagina10.php');
+    } else if (isset($_POST['resposta']) && !empty($_POST['resposta'])){
+        header('location: pagina10.php');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

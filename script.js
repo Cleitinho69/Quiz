@@ -3,12 +3,6 @@ const caixa = [...document.getElementsByName("resposta")];
 var el_certo = document.getElementById("certo");
 var respondeu = false;
 var vez = 1;
-//aqui serve para desabilitar as caixas
-var desabilitar = () => {
-  resposta.map((el) => {
-    el.children[0].disabled = true;
-  });
-};
 //aqui serve para selecionar as caixas
 resposta.map((el) => {
   el.addEventListener("click", (check) => {
@@ -19,13 +13,14 @@ resposta.map((el) => {
     const res = check.children[0].defaultValue;
     //aqui é para ativar as coisas
     if (res == "certo" && habilitar == false) {
+      // aqui serve para marcar o radio button
+      check.children[0].checked=true;
       check.classList.add("certo");
-      desabilitar();
     } else if (res == "errado" && habilitar == false) {
+      check.children[0].checked=true;
       //serve apenas para mostrar qual era a certa
       el_certo.classList.add("certo2");
       check.classList.add("errado");
-      desabilitar();
     }
   });
 });
@@ -80,7 +75,7 @@ setInterval(() => {
       alert("Parabens você acertou!");
       //aqui serve para dar um submit na página
       document.querySelector('form').submit();
-    } else if (!el_certo.classList[1] == "") {
+    } else if (el_certo.classList[1] != "certo") {
       alert("Que pena, você errou ");
       //aqui serve para dar um submit na página
       document.querySelector('form').submit();
